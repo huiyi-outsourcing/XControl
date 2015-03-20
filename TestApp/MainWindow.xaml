@@ -1,0 +1,15 @@
+﻿<Window x:Class="TestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Width="100" Height="50" Style="{StaticResource XButton}">确定</Button>
+        <ToggleButton Width="100" Height="50" Style="{StaticResource XRecordToggleButton}">确定</ToggleButton>
+        <TextBox Width="100" Height="30" Style="{StaticResource XTextBox}" />
+        <Label Content="测试" Width="50" Height="30" Style="{StaticResource XLabel}" />
+        <ComboBox Width="250" Height="30" Style="{StaticResource XComboBox}">
+            <ComboBoxItem>item1</ComboBoxItem>
+            <ComboBoxItem>item2</ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
+</Window>

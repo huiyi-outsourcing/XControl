@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="DefaultFontColor" Color="#ffffff" />
+    <SolidColorBrush x:Key="FocusFontColor" Color="#e81313" />
+
+    <ControlTemplate x:Key="XLabelTemplate" TargetType="{x:Type Label}">
+        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource ResourceKey=FocusFontColor}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="XLabel" TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=DefaultFontColor}" />
+        <Setter Property="FontSize" Value="12" />
+
+        <Setter Property="Template" Value="{StaticResource XLabelTemplate}" />
+    </Style>
+</ResourceDictionary>
