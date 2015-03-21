@@ -6,6 +6,7 @@
     <SolidColorBrush x:Key="DefaultBackground" Color="#150a0a" />
     <SolidColorBrush x:Key="DisabledBackground" Color="#141010" />
     <SolidColorBrush x:Key="ComboBoxItemHighlightColor" Color="#5b5353" />
+    <SolidColorBrush x:Key="FontColor" Color="#616161" />
     
     <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
         <Grid>
@@ -133,7 +134,7 @@
 
     <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColor}"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -165,7 +166,8 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="MinWidth" Value="120"/>
         <Setter Property="MinHeight" Value="20"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColor}"/>
+        <Setter Property="FontSize" Value="12" />
         <Setter Property="Template" Value="{StaticResource XComboBoxTemplate}" />
     </Style>
 

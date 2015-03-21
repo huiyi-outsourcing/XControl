@@ -5,14 +5,10 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/XControl;component/Themes/Style/XButton.xaml" />
-        
         <ResourceDictionary Source="/XControl;component/Themes/Style/XRecordToggleButton.xaml" />
-        
         <ResourceDictionary Source="/XControl;component/Themes/Style/XTextBox.xaml" />
-        
         <ResourceDictionary Source="/XControl;component/Themes/Style/XLabel.xaml" />
-        
         <ResourceDictionary Source="/XControl;component/Themes/Style/XComboBox.xaml" />
-        
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XRadioButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -16,5 +16,8 @@
             <ComboBoxItem>item1</ComboBoxItem>
             <ComboBoxItem>item2</ComboBoxItem>
         </ComboBox>
+        
+        <RadioButton GroupName="123" HorizontalAlignment="Center" Style="{StaticResource XRadioButton}">123</RadioButton>
+        <RadioButton GroupName="123" HorizontalAlignment="Center" Style="{StaticResource XRadioButton}">234</RadioButton>
     </StackPanel>
 </Window>
