@@ -11,5 +11,10 @@
             <ComboBoxItem>item1</ComboBoxItem>
             <ComboBoxItem>item2</ComboBoxItem>
         </ComboBox>
+
+        <ComboBox Width="250" Height="30" Style="{StaticResource XComboBox}" IsEnabled="False">
+            <ComboBoxItem>item1</ComboBoxItem>
+            <ComboBoxItem>item2</ComboBoxItem>
+        </ComboBox>
     </StackPanel>
 </Window>
