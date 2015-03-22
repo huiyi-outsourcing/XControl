@@ -5,7 +5,7 @@
     <SolidColorBrush x:Key="FocusBorder" Color="#c80303" />
     <SolidColorBrush x:Key="DisableBackground" Color="#141010" />
     <SolidColorBrush x:Key="DisableBorder" Color="#1e1e1e" />
-    <SolidColorBrush x:Key="FontColor" Color="#ffffff" />
+    <SolidColorBrush x:Key="FontColor" Color="#969696" />
 
     <ControlTemplate x:Key="XTextBoxTemplate" TargetType="{x:Type TextBox}">
         <Border Background="{TemplateBinding Background}"
@@ -13,8 +13,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}">
             <ScrollViewer x:Name="PART_ContentHost"
                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                      VerticalAlignment="Center" 
-                                      Margin="5 0 0 0 "/>
+                                      Margin="5 5 0 0 "/>
         </Border>
 
         <ControlTemplate.Triggers>
@@ -23,7 +22,7 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
     <Style x:Key="XTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{StaticResource ResourceKey=DefaultBackground}" />
         <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=DefaultBorder}" />
@@ -36,5 +35,14 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         
         <Setter Property="Template" Value="{StaticResource XTextBoxTemplate}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Text" Value="" />
+                    <Condition Property="IsKeyboardFocusWithin" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource CueBanner}" />
+            </MultiTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

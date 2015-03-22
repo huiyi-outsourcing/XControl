@@ -15,5 +15,7 @@
         <ResourceDictionary Source="/XControl;component/Themes/Style/XTabControl.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XTextBlock.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XListBox.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XCheckBox.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XProgressBar.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -10,6 +10,16 @@
         </Border>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="XButtonCornerRadiusTemplate" TargetType="{x:Type Button}">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="4 4 4 4">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+        </Border>
+    </ControlTemplate>
+
     <Style x:Key="XButton" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="50" />
         <Setter Property="Height" Value="30" />
@@ -27,6 +37,52 @@
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="#c80303" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="XButtonConfirm" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="BorderBrush" Value="#be2526" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="#ffffff" />
+        <Setter Property="FontSize" Value="12" />
+
+        <Setter Property="Background" Value="#831e1e" />
+
+        <Setter Property="Template" Value="{StaticResource XButtonCornerRadiusTemplate}" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="#C30303" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="XButtonCancel" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="BorderBrush" Value="#857676" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="#ffffff" />
+        <Setter Property="FontSize" Value="12" />
+
+        <Setter Property="Background" Value="#605353" />
+
+        <Setter Property="Template" Value="{StaticResource XButtonCornerRadiusTemplate}" />
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="#766d6d" />
             </Trigger>
         </Style.Triggers>
     </Style>

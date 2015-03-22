@@ -28,5 +28,12 @@ namespace TestApp
         {
             this.DragMove();
         }
+
+        private void NewShare_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NewShareControl.Visibility = Visibility.Visible;
+            ShareList.Visibility = Visibility.Collapsed;
+        }
+
     }
 }
