@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -32,6 +33,22 @@ namespace TestApp
         private void Share_Click(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, MouseButtonEventArgs e)
+        {
+            ExitWindow window = new ExitWindow();
+            EffectBorder.Background = Brushes.Black;
+            EffectBorder.Opacity = 0.5;
+            window.ShowDialog();
+        }
+
+        private void Window_Minimizing(object sender, MouseButtonEventArgs e)
+        {
+            NotificationWindow window = new NotificationWindow();
+            EffectBorder.Background = Brushes.Black;
+            EffectBorder.Opacity = 0.5;
+            window.ShowDialog();
         }
     }
 }

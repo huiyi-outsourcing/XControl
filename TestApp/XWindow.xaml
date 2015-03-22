@@ -7,13 +7,12 @@
         MouseLeftButtonDown="DragWindow"
         WindowStartupLocation="CenterScreen"
         Height="640" Width="400">
-    <Grid>
+    <Grid Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
             <RowDefinition Height="500" />
             <RowDefinition Height="70" />
         </Grid.RowDefinitions>
-        
         <Grid Name="Header" Background="#272626" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -33,10 +32,12 @@
                     <RowDefinition Height="35" />
                     <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
-                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource XImage_Border}">
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource XImage_Border}"
+                        MouseDown="Window_Minimizing">
                     <Image Style="{StaticResource XImage_Minimize}" />
                 </Border>
-                <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource XImage_Border}">
+                <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource XImage_Border}"
+                        MouseDown="Window_Closing">
                     <Image Style="{StaticResource XImage_Exit}" />
                 </Border>
             </Grid>
@@ -144,8 +145,10 @@
         <Grid Name="Footer" Background="#272626" Grid.Row="2">
             <ToggleButton Style="{StaticResource XRecordToggleButton}" />
             <Label Style="{StaticResource XLabel}" Content="分享>"
-                   HorizontalAlignment="Right" Margin="0 0 20 0"
-                   FontSize="14"/>
+            HorizontalAlignment="Right" Margin="0 0 20 0"
+            FontSize="14"/>
         </Grid>
+        
+        <Border Grid.RowSpan="3" Name="EffectBorder" Panel.ZIndex="1"/>
     </Grid>
 </Window>
