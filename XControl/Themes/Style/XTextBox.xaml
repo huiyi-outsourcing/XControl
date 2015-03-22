@@ -30,7 +30,11 @@
         <Setter Property="Foreground" Value="{StaticResource ResourceKey=FontColor}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-
+        <Setter Property="Width" Value="270" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        
         <Setter Property="Template" Value="{StaticResource XTextBoxTemplate}" />
     </Style>
 </ResourceDictionary>

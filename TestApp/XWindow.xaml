@@ -22,8 +22,7 @@
             <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Grid.Column="0">
                 <Image Source="/XControl;component/Images/Header_DefaultImage.png"
                         Height="45" Width="45" />
-                <TextBlock Text="登陆/注册" Foreground="#969696" FontSize="14" 
-                           VerticalAlignment="Center" Margin="5 0 0 0"/>
+                <TextBlock Style="{StaticResource XUserTextBlock}" Text="登陆/注册" />
             </StackPanel>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -46,7 +45,49 @@
         <Grid Name="Body" Background="#1a1616" Grid.Row="1">
             <TabControl Style="{StaticResource XTabControl}">
                 <TabItem Style="{StaticResource XTabItem}" Header="高能设置" Margin="0 0 30 0">
-                    
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" 
+                                Margin="20 0 0 0">
+                        <TextBlock Style="{StaticResource XTextBlock}" Text="录制目录" />
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="30">
+                            <TextBox Style="{StaticResource XTextBox}" Text="D:/桌面/录像" />
+                            <Button Style="{StaticResource XButton}" Content="更换" Margin="20 0 0 0" />
+                        </StackPanel>
+                        
+                        <TextBlock Style="{StaticResource XTextBlock}" Text="录制模式" />
+                        <RadioButton GroupName="RecordTypeGroup"
+                                     Content="录制目录"
+                                     Style="{StaticResource XRadioButton}"
+                                     Margin="0 0 0 10" />
+                        <RadioButton GroupName="RecordTypeGroup"
+                                     Content="录制目录"
+                                     Style="{StaticResource XRadioButton}"
+                                     Margin="0 0 0 10" />
+                        <ComboBox Style="{StaticResource XComboBox}" SelectedIndex="0">
+                            <ComboBoxItem>当前进程</ComboBoxItem>
+                            <ComboBoxItem>DOTA2</ComboBoxItem>
+                            <ComboBoxItem>星际争霸</ComboBoxItem>
+                            <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                        </ComboBox>
+                        
+                        <TextBlock Text="录制时长" Style="{StaticResource XTextBlock}" />
+                        <StackPanel Orientation="Horizontal" Height="30">
+                            <TextBox Style="{StaticResource XTextBox}" Width="50" Text="100" />
+                            <TextBlock Style="{StaticResource XTextBlock}" Margin="5 0 0 0" Text="秒" />
+                        </StackPanel>
+                        
+                        <TextBlock Text="录制画质" Style="{StaticResource XTextBlock}" />
+                        <ComboBox Style="{StaticResource XComboBox}" SelectedIndex="0">
+                            <ComboBoxItem>智能选择</ComboBoxItem>
+                            <ComboBoxItem>随机选择</ComboBoxItem>
+                        </ComboBox>
+                        
+                        <TextBlock Text="录制按钮" Style="{StaticResource XTextBlock}" />
+                        <StackPanel Orientation="Horizontal" Height="30">
+                            <TextBox Style="{StaticResource XTextBox}" Text="F12" Width="50" />
+                            <TextBlock Text="键" Margin="5 0 0 0" Style="{StaticResource XTextBlock}" />
+                        </StackPanel>
+                        
+                    </StackPanel>
                 </TabItem>
                 <TabItem Style="{StaticResource XTabItem}" Header="高能列表">
                     234
@@ -55,7 +96,10 @@
         </Grid>
 
         <Grid Name="Footer" Background="#272626" Grid.Row="2">
-            
+            <ToggleButton Style="{StaticResource XRecordToggleButton}" />
+            <Label Style="{StaticResource XLabel}" Content="分享>"
+                   HorizontalAlignment="Right" Margin="0 0 20 0"
+                   FontSize="14"/>
         </Grid>
     </Grid>
 </Window>

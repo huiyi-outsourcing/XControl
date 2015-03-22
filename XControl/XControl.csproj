@@ -75,11 +75,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Style\XRecordToggleButton.xaml">
+    <Page Include="Themes\Style\XToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Style\XTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Style\XTextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Header_DefaultImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RecordButton_Unfocused.png" />
+    <Resource Include="Images\RecordButton_MouseOver.png" />
+    <Resource Include="Images\RecordButton_Checked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

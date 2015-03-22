@@ -12,16 +12,31 @@
         <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#ff2323" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/XControl;component/Images/RecordButton_Checked.png" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Content" Value="录制中" />
             </Trigger>
             <Trigger Property="IsChecked" Value="False">
-                <Setter Property="Background" Value="#6a4d4d" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/XControl;component/Images/RecordButton_Unfocused.png" />
+                    </Setter.Value>
+                </Setter>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#c80303" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/XControl;component/Images/RecordButton_MouseOver.png" />
+                    </Setter.Value>
+                </Setter>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -31,19 +46,12 @@
         <Setter Property="Height" Value="50" />
         <Setter Property="Background" Value="#6a4d4d" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="#ffffff" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Content" Value="开始录制" />
+        <Setter Property="BorderThickness" Value="0" />
 
         <Setter Property="Template" Value="{StaticResource RecordToggleButtonTemplate}" />
-
-        <Style.Triggers>
-
-            <!--
-            <DataTrigger  Binding="{Binding Path=IsChecked}" Value="True">
-                <Setter Property="Background" Value="#ff2323" />
-            </DataTrigger>
-            <DataTrigger  Binding="{Binding Path=IsChecked}" Value="False">
-                <Setter Property="Background" Value="#6a4d4d" />
-            </DataTrigger>
-            -->
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>

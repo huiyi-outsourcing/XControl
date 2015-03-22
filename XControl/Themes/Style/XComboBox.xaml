@@ -161,11 +161,14 @@
     <Style x:Key="XComboBox" TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
+        
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-        <Setter Property="MinWidth" Value="120"/>
-        <Setter Property="MinHeight" Value="20"/>
+        
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="Foreground" Value="{StaticResource FontColor}"/>
         <Setter Property="FontSize" Value="12" />
         <Setter Property="Template" Value="{StaticResource XComboBoxTemplate}" />

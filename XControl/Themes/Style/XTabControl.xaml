@@ -20,7 +20,8 @@
                     KeyboardNavigation.DirectionalNavigation="Contained" 
                     Grid.Row="1" 
                     KeyboardNavigation.TabIndex="2" 
-                    KeyboardNavigation.TabNavigation="Local">
+                    KeyboardNavigation.TabNavigation="Local"
+                    Width="380">
                 <ContentPresenter x:Name="PART_SelectedContentHost" 
                                   ContentSource="SelectedContent" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
@@ -49,6 +50,7 @@
     <Style x:Key="XTabControl" TargetType="{x:Type TabControl}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Width" Value="Auto" />
         
         <Setter Property="Template" Value="{StaticResource XTabControlTemplate}" />
     </Style>

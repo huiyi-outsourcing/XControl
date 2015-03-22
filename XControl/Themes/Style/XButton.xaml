@@ -3,8 +3,8 @@
 
     <ControlTemplate x:Key="XButtonTemplate" TargetType="{x:Type Button}">
         <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
             <ContentPresenter HorizontalAlignment="Center"
                               VerticalAlignment="Center" />
         </Border>
@@ -15,7 +15,7 @@
         <Setter Property="Height" Value="30" />
         <Setter Property="Background" Value="#4e4545" />
         <Setter Property="BorderBrush" Value="#857676" />
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Foreground" Value="#ffffff" />
         <Setter Property="FontSize" Value="12" />
 

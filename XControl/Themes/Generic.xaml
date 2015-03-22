@@ -5,7 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/XControl;component/Themes/Style/XButton.xaml" />
-        <ResourceDictionary Source="/XControl;component/Themes/Style/XRecordToggleButton.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XToggleButton.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XTextBox.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XLabel.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XComboBox.xaml" />
@@ -13,5 +13,6 @@
         <ResourceDictionary Source="/XControl;component/Themes/Style/XDropdownMenu.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XImage.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XTabControl.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XTextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
