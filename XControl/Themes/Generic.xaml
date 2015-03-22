@@ -10,5 +10,6 @@
         <ResourceDictionary Source="/XControl;component/Themes/Style/XLabel.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XComboBox.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XRadioButton.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XDropdownMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
