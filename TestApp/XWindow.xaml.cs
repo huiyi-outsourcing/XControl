@@ -28,5 +28,10 @@ namespace TestApp
         {
             this.DragMove();
         }
+
+        private void Share_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

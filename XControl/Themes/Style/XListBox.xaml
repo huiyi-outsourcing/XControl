@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ControlTemplate x:Key="XListBoxTemplate" TargetType="{x:Type ListBox}">
+        <Border Name="Border"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Background="{TemplateBinding Background}">
+            <ScrollViewer Margin="0" Focusable="False">
+                <StackPanel Margin="2" IsItemsHost="True" />
+            </ScrollViewer>
+        </Border>
+    </ControlTemplate>
+
+    <!--
+    <ControlTemplate x:Key="XListBoxItemTemplate" TargetType="{x:Type ListBoxItem}">
+        <Border Name="Border"
+                Padding="2"
+                SnapsToDevicePixels="True"
+                Height="50">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontSize="14" Foreground="#cbcbcb" Grid.Column="1"
+                           Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+
+                <Label Content="分享" Style="{StaticResource XLabel}" Grid.Column="2" />
+                <Label Content="裁剪" Style="{StaticResource XLabel}" Grid.Column="4" />
+                <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="Background" Value="#221f1f" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    -->
+
+    <Style x:Key="XListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        
+        <Setter Property="Template" Value="{StaticResource XListBoxTemplate}" />
+    </Style>
+
+    <!--
+    <Style x:Key="XListBoxItem" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+
+        <Setter Property="Template" Value="{StaticResource XListBoxItemTemplate}" />
+    </Style>
+    -->
+</ResourceDictionary>

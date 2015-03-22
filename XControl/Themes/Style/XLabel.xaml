@@ -5,10 +5,10 @@
 
     <ControlTemplate x:Key="XLabelTemplate" TargetType="{x:Type Label}">
         <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
             <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center" />
+                              VerticalAlignment="Center" />
         </Border>
 
         <ControlTemplate.Triggers>
