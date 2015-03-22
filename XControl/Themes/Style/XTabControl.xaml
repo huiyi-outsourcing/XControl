@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="XTabControlTemplate" TargetType="{x:Type TabControl}">
+        <Grid ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="450" />
+            </Grid.RowDefinitions>
+            
+            <Border BorderThickness="0 0 0 1" BorderBrush="#5b5353">
+                <StackPanel x:Name="HeaderPanel" Margin="0" IsItemsHost="True" 
+                            Orientation="Horizontal" HorizontalAlignment="Center">
+                </StackPanel>
+            </Border>
+            <Border x:Name="ContentPanel" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}" 
+                    KeyboardNavigation.DirectionalNavigation="Contained" 
+                    Grid.Row="1" 
+                    KeyboardNavigation.TabIndex="2" 
+                    KeyboardNavigation.TabNavigation="Local">
+                <ContentPresenter x:Name="PART_SelectedContentHost" 
+                                  ContentSource="SelectedContent" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="XTabItemTemplate" TargetType="{x:Type TabItem}">
+        <Border x:Name="Bd" BorderThickness="0" Background="{x:Null}" Width="65" Height="50">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch"
+                       VerticalAlignment="Center" Text="{TemplateBinding Header}" />
+        </Border>
+        
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="textBlock" Property="Foreground" Value="#ffffff" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Bd" Property="BorderBrush" Value="#5b5353" />
+                <Setter TargetName="Bd" Property="BorderThickness" Value="0 0 0 5" />
+                <Setter TargetName="textBlock" Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <Style x:Key="XTabControl" TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        
+        <Setter Property="Template" Value="{StaticResource XTabControlTemplate}" />
+    </Style>
+    
+    <Style x:Key="XTabItem" TargetType="{x:Type TabItem}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#969696" />
+        <Setter Property="FontSize" Value="16" />
+
+        <Setter Property="Template" Value="{StaticResource XTabItemTemplate}" />
+    </Style>
+</ResourceDictionary>

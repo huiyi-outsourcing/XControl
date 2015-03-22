@@ -44,7 +44,14 @@
         </Grid>
         
         <Grid Name="Body" Background="#1a1616" Grid.Row="1">
-            
+            <TabControl Style="{StaticResource XTabControl}">
+                <TabItem Style="{StaticResource XTabItem}" Header="高能设置" Margin="0 0 30 0">
+                    
+                </TabItem>
+                <TabItem Style="{StaticResource XTabItem}" Header="高能列表">
+                    234
+                </TabItem>
+            </TabControl>
         </Grid>
 
         <Grid Name="Footer" Background="#272626" Grid.Row="2">
