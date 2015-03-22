@@ -1,0 +1,54 @@
+﻿<Window x:Class="TestApp.XWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="DragWindow"
+        WindowStartupLocation="CenterScreen"
+        Height="640" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="500" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+        
+        <Grid Name="Header" Background="#272626" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="70" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Grid.Column="0">
+                <Image Source="/XControl;component/Images/Header_DefaultImage.png"
+                        Height="45" Width="45" />
+                <TextBlock Text="登陆/注册" Foreground="#969696" FontSize="14" 
+                           VerticalAlignment="Center" Margin="5 0 0 0"/>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35" />
+                    <ColumnDefinition Width="35" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource XImage_Border}">
+                    <Image Style="{StaticResource XImage_Minimize}" />
+                </Border>
+                <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource XImage_Border}">
+                    <Image Style="{StaticResource XImage_Exit}" />
+                </Border>
+            </Grid>
+        </Grid>
+        
+        <Grid Name="Body" Background="#1a1616" Grid.Row="1">
+            
+        </Grid>
+
+        <Grid Name="Footer" Background="#272626" Grid.Row="2">
+            
+        </Grid>
+    </Grid>
+</Window>

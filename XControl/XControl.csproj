@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Style\XImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Style\XLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +115,13 @@
     <Resource Include="Images\Arrow_Default.png" />
     <Resource Include="Images\Arrow_Focused.png" />
     <Resource Include="Images\Arrow_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Window_Minimize.png" />
+    <Resource Include="Images\Window_Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Header_DefaultImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
