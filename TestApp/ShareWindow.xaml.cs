@@ -35,5 +35,12 @@ namespace TestApp
             ShareList.Visibility = Visibility.Collapsed;
         }
 
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ExitWindow window = new ExitWindow();
+            EffectBorder.Background = Brushes.Black;
+            EffectBorder.Opacity = 0.5;
+            window.ShowDialog();
+        }
     }
 }

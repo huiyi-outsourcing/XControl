@@ -33,11 +33,11 @@
                     <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource XImage_Border}"
-                        MouseDown="Window_Minimizing">
+                        MouseDown="Minimize_MouseDown">
                     <Image Style="{StaticResource XImage_Minimize}" />
                 </Border>
                 <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource XImage_Border}"
-                        MouseDown="Window_Closing">
+                        MouseDown="Exit_MouseDown">
                     <Image Style="{StaticResource XImage_Exit}" />
                 </Border>
             </Grid>

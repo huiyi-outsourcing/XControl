@@ -35,7 +35,7 @@ namespace TestApp
 
         }
 
-        private void Window_Closing(object sender, MouseButtonEventArgs e)
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
             ExitWindow window = new ExitWindow();
             EffectBorder.Background = Brushes.Black;
@@ -43,7 +43,7 @@ namespace TestApp
             window.ShowDialog();
         }
 
-        private void Window_Minimizing(object sender, MouseButtonEventArgs e)
+        private void Minimize_MouseDown(object sender, MouseButtonEventArgs e)
         {
             NotificationWindow window = new NotificationWindow();
             EffectBorder.Background = Brushes.Black;

@@ -19,7 +19,7 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center" />
             <Border HorizontalAlignment="Right" VerticalAlignment="Top"
                 Style="{StaticResource XImage_Border}" Width="35" Height="35">
-                <Image Style="{StaticResource XImage_Exit}" />
+                <Image Style="{StaticResource XImage_Exit}" MouseDown="Exit_MouseDown" />
             </Border>
         </Grid>
         
@@ -186,8 +186,17 @@
                         </Border>
                     </StackPanel>
                 </TabItem>
+                
                 <TabItem Style="{StaticResource XTabItem_Share}" Header="视频裁剪" Margin="15 0 0 0">
-
+                    <StackPanel Orientation="Vertical" Margin="20 20 20 0">
+                        <Border Width="460" Height="300"
+                                Background="Gray"/>
+                        
+                        <TextBlock Style="{StaticResource XTextBlock}" Text="PlaceHolder" Height="50" />
+                        
+                        <Button Style="{StaticResource XButton}" Content="暂停"
+                                HorizontalAlignment="Left" Margin="0 20 0 0"/>
+                    </StackPanel>
                 </TabItem>
             </TabControl>
         </Grid>
