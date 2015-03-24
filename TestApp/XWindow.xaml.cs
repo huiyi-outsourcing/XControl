@@ -30,7 +30,7 @@ namespace TestApp
             this.DragMove();
         }
 
-        private void Share_Click(object sender, MouseButtonEventArgs e)
+        private void ShareWindow_Click(object sender, MouseButtonEventArgs e)
         {
             double screenX = SystemParameters.WorkArea.Width;
             double screenY = SystemParameters.WorkArea.Height;
@@ -72,5 +72,14 @@ namespace TestApp
             UserMenu.Visibility = Visibility.Visible;
             UserMenu.IsEnabled = true;
         }
+
+        private void Share_MouseDown(object sender, MouseButtonEventArgs e)
+        { }
+
+        private void Clip_MouseDown(object sender, MouseButtonEventArgs e)
+        { }
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
+        { }
     }
 }

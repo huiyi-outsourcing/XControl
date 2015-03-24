@@ -40,18 +40,21 @@
                                                HorizontalAlignment="Center" Margin="0 20 0 20" FontSize="14" />
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBox Style="{StaticResource XTextBox}" Width="400"
-                                                     Name="VideoSelection">
-                                            <TextBox.Resources>
-                                                <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
-                                                    <VisualBrush.Visual>
-                                                        <Border Background="#150a0a" Width="400">
-                                                            <Label Foreground="#969696" Content="选择视频" />
-                                                        </Border>
-                                                    </VisualBrush.Visual>
-                                                </VisualBrush>
-                                            </TextBox.Resources>
-                                        </TextBox>
+                                        <Grid>
+                                            <TextBox Style="{StaticResource XTextBox}" Width="400"
+                                                         Name="VideoSelection">
+                                                <TextBox.Resources>
+                                                    <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
+                                                        <VisualBrush.Visual>
+                                                            <Border Background="#150a0a" Width="400">
+                                                                <Label Foreground="#969696" Content="选择视频" />
+                                                            </Border>
+                                                        </VisualBrush.Visual>
+                                                    </VisualBrush>
+                                                </TextBox.Resources>
+                                            </TextBox>
+                                            <ProgressBar Style="{StaticResource XProgressBar}" Width="400" Value="50" Opacity=".5" Background="#150a0a" />
+                                        </Grid>
                                         <Button Style="{StaticResource XButton}" Content="更换" Margin="10 0 0 0" />
                                     </StackPanel>
 
@@ -162,8 +165,8 @@
 
                                                                 <Label Content="上传完成12%" Style="{StaticResource XLabel}" 
                                                                    Grid.Column="2" Foreground="#616161" />
-                                                                <Label Content="查看" Style="{StaticResource XLabel}" Grid.Column="4"/>
-                                                                <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6"/>
+                                                                <Label Content="查看" Style="{StaticResource XLabel}" Grid.Column="4" MouseDown="Detail_MouseDown"/>
+                                                                <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6" MouseDown="Delete_MouseDown"/>
 
                                                                 <ProgressBar Style="{StaticResource XProgressBar}" Grid.ColumnSpan="8" 
                                                                          VerticalAlignment="Bottom" Value="50" />

@@ -150,9 +150,9 @@
                                                         <TextBlock FontSize="14" Foreground="#cbcbcb" Grid.Column="1"
                            Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
 
-                                                        <Label Content="分享" Style="{StaticResource XLabel}" Grid.Column="2" />
-                                                        <Label Content="裁剪" Style="{StaticResource XLabel}" Grid.Column="4"/>
-                                                        <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6"/>
+                                                        <Label Content="分享" Style="{StaticResource XLabel}" Grid.Column="2" MouseDown="Share_MouseDown" />
+                                                        <Label Content="裁剪" Style="{StaticResource XLabel}" Grid.Column="4" MouseDown="Clip_MouseDown"/>
+                                                        <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6" MouseDown="Delete_MouseDown"/>
                                                     </Grid>
                                                 </Border>
                                                 <ControlTemplate.Triggers>
@@ -178,7 +178,7 @@
                 <ToggleButton Style="{StaticResource XRecordToggleButton}" />
                 <Label Style="{StaticResource XLabel}" Content="分享>"
                        HorizontalAlignment="Right" Margin="0 0 20 0"
-                       FontSize="14" MouseDown="Share_Click"/>
+                       FontSize="14" MouseDown="ShareWindow_Click"/>
             </Grid>
 
             <Border Grid.RowSpan="3" Name="EffectBorder" Panel.ZIndex="1"/>

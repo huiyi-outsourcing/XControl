@@ -42,5 +42,13 @@ namespace TestApp
             EffectBorder.Opacity = 0.5;
             window.ShowDialog();
         }
+
+        private void Detail_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+        }
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+        }
     }
 }
