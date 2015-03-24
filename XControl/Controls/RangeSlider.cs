@@ -60,7 +60,7 @@
     public class RangeSlider : Control
     {
         #region Data Members
-        const double RepeatButtonMoveRatio = 0.1; // used to move the selection by x ratio when click the repeat buttons
+        bool internalUpdate = false;
         Border trackBorder;
         Border indicatorBorder;
         RepeatButton leftButton;
@@ -79,7 +79,10 @@
                 delegate(DependencyObject sender, DependencyPropertyChangedEventArgs e)
                 {
                     RangeSlider slider = sender as RangeSlider;
-                    slider.RecalculateWidth();
+                    if (!slider.internalUpdate)
+                    {
+                        slider.RecalculateWidth();
+                    }
                 }));
 
         public int Start
@@ -93,7 +96,10 @@
                 delegate(DependencyObject sender, DependencyPropertyChangedEventArgs e)
                 {
                     RangeSlider slider = sender as RangeSlider;
-                    slider.RecalculateWidth();
+                    if (!slider.internalUpdate)
+                    {
+                        slider.RecalculateWidth();
+                    }
                 }));
         
         public int End
@@ -125,7 +131,10 @@
                 delegate(DependencyObject sender, DependencyPropertyChangedEventArgs e)
                 {
                     RangeSlider slider = sender as RangeSlider;
-                    slider.RecalculateProgress();
+                    if (!slider.internalUpdate)
+                    {
+                        slider.RecalculateProgress();
+                    }
                 }));
 
         public int Value
@@ -222,27 +231,97 @@
         private void RecalculateProgress() 
         {
             if (leftButton != null && rightButton != null)
-            { 
+            {
                 leftButton.Width = Math.Max(leftButton.Width, 0);
                 rightButton.Width = Math.Max(rightButton.Width, 0);
+
+                internalUpdate = true;
                 Value = (int)(leftButton.Width * 1.0 / 440 * (Max - Min));
+                internalUpdate = false;
             }
+            /*
+            if (internalUpdate)
+            {
+                if (leftButton != null && rightButton != null)
+                {
+                    leftButton.Width = Math.Max(leftButton.Width, 0);
+                    rightButton.Width = Math.Max(rightButton.Width, 0);
+
+                    internalUpdate = true;
+                    Value = (int)(leftButton.Width * 1.0 / 440 * (Max - Min));
+                    internalUpdate = false;
+                }
+            }
+            else
+            {
+                //double horizontalChange = Value * 1.0 / (Max - Min) * 440;
+                //MoveThumb(leftButton, rightButton, horizontalChange);
+                internalUpdate = true;
+                Value = adjustValue(Value);
+                internalUpdate = false;    
+
+                leftButton.Width = Math.Max(Value * 1.0 / (Max - Min) * 440, 0);
+                rightButton.Width = Math.Max(440 - leftButton.Width, 0);
+            }
+             */
         }
 
         private void RecalculateWidth()
         {
-            if (leftEdge != null && centerEdge != null && rightEdge != null)
-            {
-                leftEdge.Width = Math.Max(leftEdge.Width, 0);
-                centerEdge.Width = Math.Max(centerEdge.Width, 0);
-                rightEdge.Width = Math.Max(rightEdge.Width, 0);
+            leftEdge.Width = Math.Max(leftEdge.Width, 0);
+            centerEdge.Width = Math.Max(centerEdge.Width, 0);
+            rightEdge.Width = Math.Max(rightEdge.Width, 0);
 
-                Start = (int)(leftEdge.Width * 1.0 / 440 * (Max - Min));
-                End = (int)((leftEdge.Width + leftThumb.Width + centerEdge.Width) * 1.0 / 440 * (Max - Min));
+            internalUpdate = true;
+            Start = (int)(leftEdge.Width * 1.0 / 440 * (Max - Min));
+            End = (int)((leftEdge.Width + leftThumb.Width + centerEdge.Width) * 1.0 / 440 * (Max - Min));
+            internalUpdate = false;
+
+            indicatorBorder.Width = (End - Start) * 1.0 / (Max - Min) * 440;
+            indicatorBorder.Margin = new Thickness((Start * 1.0) / (Max - Min) * 440 + 1, 0, 0, 0);
+            /*
+            if (!internalUpdate)
+            {
+                if (leftEdge != null && centerEdge != null && rightEdge != null)
+                {
+                    leftEdge.Width = Math.Max(leftEdge.Width, 0);
+                    centerEdge.Width = Math.Max(centerEdge.Width, 0);
+                    rightEdge.Width = Math.Max(rightEdge.Width, 0);
+
+                    internalUpdate = true;
+                    Start = (int)(leftEdge.Width * 1.0 / 440 * (Max - Min));
+                    End = (int)((leftEdge.Width + leftThumb.Width + centerEdge.Width) * 1.0 / 440 * (Max - Min));
+                    internalUpdate = false;
+
+                    indicatorBorder.Width = (End - Start) * 1.0 / (Max - Min) * 440;
+                    indicatorBorder.Margin = new Thickness((Start * 1.0) / (Max - Min) * 440 + 1, 0, 0, 0);
+                }
+            }
+            else
+            {
+                internalUpdate = true;
+                Start = adjustValue(Start);
+                End = adjustValue(End);
+                internalUpdate = false;
+
+                leftEdge.Width = Math.Max(Start * 1.0 / (Max - Min) * 440, 0);
+                centerEdge.Width = Math.Max((End - Start) * 1.0 / (Max - Min) * 440, 0);
+                rightEdge.Width = Math.Max(440 - leftEdge.Width - centerEdge.Width, 0);
 
                 indicatorBorder.Width = (End - Start) * 1.0 / (Max - Min) * 440;
                 indicatorBorder.Margin = new Thickness((Start * 1.0) / (Max - Min) * 440 + 1, 0, 0, 0);
             }
+             */
+        }
+
+        private int adjustValue(int input)
+        {
+            if (input < Min)
+                input = Min;
+            if (input > Max)
+                input = Max;
+
+            return input;
         }
         #endregion
     }

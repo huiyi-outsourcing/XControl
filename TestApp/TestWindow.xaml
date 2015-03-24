@@ -4,12 +4,13 @@
         xmlns:Controls="clr-namespace:XControl.Controls;assembly=XControl"
         Title="TestWindow" Height="300" Width="510">
     <Grid>
-        <Controls:RangeSlider Name="rangeSlider" Min="0" Max="100" Start="50" End="100" Value="50" />
+        <Controls:RangeSlider Name="rangeSlider" />
         
         <StackPanel Margin="0 0 0 0">
             <TextBlock Name="tb_value" Text="{Binding ElementName=rangeSlider, Path=Value}" />
             <TextBlock Name="tb_start" Height="30" Text="{Binding ElementName=rangeSlider, Path=Start}" />
             <TextBlock Name="tb_end" Height="30" Text="{Binding ElementName=rangeSlider, Path=End}" />
+            <Button Click="Button_Click" Name="abc" Height="20" Width="50" />
         </StackPanel>
     </Grid>
 </Window>

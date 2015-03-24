@@ -22,8 +22,13 @@ namespace TestApp
         public TestWindow()
         {
             InitializeComponent();
+        }
 
-            rangeSlider.Value = 50;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            rangeSlider.Value += 10;
+            rangeSlider.Start += 2;
+            rangeSlider.End += 4;
         }
     }
 }
