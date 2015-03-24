@@ -47,6 +47,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\XControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +91,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Style\XRangeSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Style\XToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +113,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\RangeSlider.cs" />
+    <Compile Include="Controls\XControl.xaml.cs">
+      <DependentUpon>XControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -153,6 +165,18 @@
     <Resource Include="Images\Weibo_Unfocused.png" />
     <Resource Include="Images\QZone_Focused.png" />
     <Resource Include="Images\QZone_Unfocused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BorderThumb_Unfocused.png" />
+    <Resource Include="Images\BorderThumb_Focused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Thumb_Unfocused.png" />
+    <Resource Include="Images\Thumb_Focused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BorderThumb_Unfocused1.png" />
+    <Resource Include="Images\BorderThumb_Focused1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

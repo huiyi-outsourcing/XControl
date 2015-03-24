@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:XControl">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/XControl;component/Themes/Style/XButton.xaml" />
@@ -17,5 +16,6 @@
         <ResourceDictionary Source="/XControl;component/Themes/Style/XListBox.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XCheckBox.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XProgressBar.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XRangeSlider.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
