@@ -5,8 +5,12 @@
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Width="260" Height="160">
-    <Border Background="#242121" BorderThickness="0">
+        Width="280" Height="180">
+    <Border x:Name="OuterGlow" Margin="10" Background="#242121"
+            BorderThickness="3">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="15" />
+        </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="110" />

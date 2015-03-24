@@ -32,7 +32,21 @@ namespace TestApp
 
         private void Share_Click(object sender, MouseButtonEventArgs e)
         {
+            double screenX = SystemParameters.WorkArea.Width;
+            double screenY = SystemParameters.WorkArea.Height;
 
+            ShareWindow share = new ShareWindow();
+            if (this.Left + 410 > screenX)
+            {
+                share.Left = this.Left - 610;
+            }
+            else
+            {
+                share.Left = this.Left + 410;
+            }
+            
+            share.Top = this.Top;
+            share.Show();
         }
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,6 +63,14 @@ namespace TestApp
             EffectBorder.Background = Brushes.Black;
             EffectBorder.Opacity = 0.5;
             window.ShowDialog();
+        }
+
+        private void UserBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginTextBlock.Visibility = Visibility.Collapsed;
+            LoginTextBlock.IsEnabled = false;
+            UserMenu.Visibility = Visibility.Visible;
+            UserMenu.IsEnabled = true;
         }
     }
 }

@@ -6,50 +6,55 @@
         Background="{x:Null}"
         AllowsTransparency="True"
         MouseLeftButtonDown="DragWindow"
-        WindowStartupLocation="CenterScreen"
-        Height="640" Width="500">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
-            <RowDefinition Height="500" />
-            <RowDefinition Height="70" />
-        </Grid.RowDefinitions>
+        WindowStartupLocation="Manual"
+        Height="660" Width="520">
+    <Border x:Name="OuterGlow" Margin="10" Background="#242121"
+            BorderThickness="3">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="15" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="500" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
 
-        <Grid Name="Header" Grid.Row="0" Panel.ZIndex="1">
-            <TextBlock Text="|" FontSize="14" Grid.Row="0" Foreground="#969696" 
+            <Grid Name="Header" Grid.Row="0" Panel.ZIndex="1">
+                <TextBlock Text="|" FontSize="14" Grid.Row="0" Foreground="#969696" 
                        HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Border HorizontalAlignment="Right" VerticalAlignment="Top"
+                <Border HorizontalAlignment="Right" VerticalAlignment="Top"
                 Style="{StaticResource XImage_Border}" Width="35" Height="35">
-                <Image Style="{StaticResource XImage_Exit}" MouseDown="Exit_MouseDown" />
-            </Border>
-        </Grid>
-        
-        <Grid Name="Body" Grid.RowSpan="2">
-            <TabControl Style="{StaticResource XTabControl_Share}">
-                <TabItem Style="{StaticResource XTabItem_Share}" Header="高能分享" Margin="0 0 15 0">
-                    <StackPanel Orientation="Vertical" Width="500">
-                        <Border Name="NewShareControl" BorderBrush="#3e3636" BorderThickness="0 0 0 1"
+                    <Image Style="{StaticResource XImage_Exit}" MouseDown="Exit_MouseDown" />
+                </Border>
+            </Grid>
+
+            <Grid Name="Body" Grid.RowSpan="2">
+                <TabControl Style="{StaticResource XTabControl_Share}">
+                    <TabItem Style="{StaticResource XTabItem_Share}" Header="高能分享" Margin="0 0 15 0">
+                        <StackPanel Orientation="Vertical" Width="500">
+                            <Border Name="NewShareControl" BorderBrush="#3e3636" BorderThickness="0 0 0 1"
                                 Visibility="Collapsed">
-                            <StackPanel Margin="20 0 20 0">
+                                <StackPanel Margin="20 0 20 0">
                                     <TextBlock Style="{StaticResource XTextBlock}" Text="分享队列"
                                                HorizontalAlignment="Center" Margin="0 20 0 20" FontSize="14" />
-                            
+
                                     <StackPanel Orientation="Horizontal">
                                         <TextBox Style="{StaticResource XTextBox}" Width="400"
                                                      Name="VideoSelection">
-                                                <TextBox.Resources>
-                                                    <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
-                                                        <VisualBrush.Visual>
-                                                            <Border Background="#150a0a" Width="400">
-                                                                <Label Foreground="#969696" Content="选择视频" />
-                                                            </Border>
-                                                        </VisualBrush.Visual>
-                                                    </VisualBrush>
-                                                </TextBox.Resources>
-                                            </TextBox>
+                                            <TextBox.Resources>
+                                                <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
+                                                    <VisualBrush.Visual>
+                                                        <Border Background="#150a0a" Width="400">
+                                                            <Label Foreground="#969696" Content="选择视频" />
+                                                        </Border>
+                                                    </VisualBrush.Visual>
+                                                </VisualBrush>
+                                            </TextBox.Resources>
+                                        </TextBox>
                                         <Button Style="{StaticResource XButton}" Content="更换" Margin="10 0 0 0" />
                                     </StackPanel>
-                            
+
                                     <TextBox Style="{StaticResource XTextBox}" Width="460"
                                                      Name="VideoTitleInput" Margin="0 20 0 0">
                                         <TextBox.Resources>
@@ -62,7 +67,7 @@
                                             </VisualBrush>
                                         </TextBox.Resources>
                                     </TextBox>
-                            
+
                                     <TextBox Style="{StaticResource XTextBox}" Width="460" Height="70"
                                                      Name="VideoDescriptionInput" Margin="0 20 0 0">
                                         <TextBox.Resources>
@@ -88,7 +93,7 @@
                                             </VisualBrush>
                                         </TextBox.Resources>
                                     </TextBox>
-                            
+
                                     <StackPanel Orientation="Horizontal">
                                         <Label Style="{StaticResource XLabel}" Content="DOTA"
                                                    Margin="0 5 8 0 "/>
@@ -101,7 +106,7 @@
                                         <Label Style="{StaticResource XLabel}" Content="超好看"
                                                    Margin="0 5 8 0 "/>
                                     </StackPanel>
-                            
+
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                                             <CheckBox Style="{StaticResource XCheckBox}"
@@ -117,7 +122,7 @@
                                                        Text="分享到 新浪微博" Margin="5 0 0 0" />
                                         </StackPanel>
                                     </StackPanel>
-                            
+
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                                                 Margin="0 20 0 20">
                                         <Button Style="{StaticResource XButtonCancel}" Content="取消" />
@@ -125,99 +130,104 @@
                                                 Margin="20 0 0 0" />
                                     </StackPanel>
                                 </StackPanel>
-                        </Border>
-                    
-                        <Border Name="ShareList">
-                            <ListBox Style="{StaticResource XListBox}">
-                                <ListBox.ItemContainerStyle>
-                                    <Style TargetType="ListBoxItem">
-                                        <Setter Property="OverridesDefaultStyle" Value="True" />
-                                        <Setter Property="SnapsToDevicePixels" Value="True" />
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                                    <Border Name="Border"
+                            </Border>
+
+                            <Border Name="ShareList">
+                                <ListBox Style="{StaticResource XListBox}">
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+                                            <Setter Property="SnapsToDevicePixels" Value="True" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                        <Border Name="Border"
                                                             Padding="2"
                                                             SnapsToDevicePixels="True"
                                                             Height="50">
-                                                        <Grid>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="20" />
-                                                                <ColumnDefinition />
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="15" />
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="15" />
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="20" />
-                                                            </Grid.ColumnDefinitions>
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="20" />
+                                                                    <ColumnDefinition />
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="15" />
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="15" />
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="20" />
+                                                                </Grid.ColumnDefinitions>
 
-                                                            <TextBlock FontSize="14" Foreground="#cbcbcb" Grid.Column="1"
+                                                                <TextBlock FontSize="14" Foreground="#cbcbcb" Grid.Column="1"
                                Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
 
-                                                            <Label Content="上传完成12%" Style="{StaticResource XLabel}" 
+                                                                <Label Content="上传完成12%" Style="{StaticResource XLabel}" 
                                                                    Grid.Column="2" Foreground="#616161" />
-                                                            <Label Content="查看" Style="{StaticResource XLabel}" Grid.Column="4"/>
-                                                            <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6"/>
-                                                            
-                                                            <ProgressBar Style="{StaticResource XProgressBar}" Grid.ColumnSpan="8" 
-                                                                         VerticalAlignment="Bottom" Value="50" />
-                                                        </Grid>
-                                                    </Border>
-                                                    <ControlTemplate.Triggers>
-                                                        <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter TargetName="Border" Property="Background" Value="#221f1f" />
-                                                        </Trigger>
-                                                    </ControlTemplate.Triggers>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </ListBox.ItemContainerStyle>
-                                <ListBox.Items>
-                                    <ListBoxItem>123</ListBoxItem>
-                                    <ListBoxItem>234</ListBoxItem>
-                                </ListBox.Items>
-                            </ListBox>
-                        </Border>
-                        
-                        <Border BorderBrush="#3e3636" BorderThickness="0 0 0 1">
-                            <Label Style="{StaticResource XLabel}" Content="+ 新建分享" Height="50"
-                                   MouseDown="NewShare_MouseDown"/>
-                        </Border>
-                    </StackPanel>
-                </TabItem>
-                
-                <TabItem Style="{StaticResource XTabItem_Share}" Header="视频裁剪" Margin="15 0 0 0">
-                    <StackPanel Orientation="Vertical" Margin="20 20 20 0">
-                        <Border Width="460" Height="300"
-                                Background="Gray"/>
-                        
-                        <local:RangeSlider Margin="0 20 0 0" />
-                        
-                        <Button Style="{StaticResource XButton}" Content="暂停"
-                                HorizontalAlignment="Left"/>
-                    </StackPanel>
-                </TabItem>
-            </TabControl>
-        </Grid>
+                                                                <Label Content="查看" Style="{StaticResource XLabel}" Grid.Column="4"/>
+                                                                <Label Content="删除" Style="{StaticResource XLabel}" Grid.Column="6"/>
 
-        <Grid Name="Footer" Grid.Row="2" Background="#272626">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="20" />
-            </Grid.ColumnDefinitions>
-            
-            <TextBlock Style="{StaticResource XTextBlock}" Text="绑定第三方账号，一键分享高能战况"
+                                                                <ProgressBar Style="{StaticResource XProgressBar}" Grid.ColumnSpan="8" 
+                                                                         VerticalAlignment="Bottom" Value="50" />
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="Border" Property="Background" Value="#221f1f" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.Items>
+                                        <ListBoxItem>123</ListBoxItem>
+                                        <ListBoxItem>234</ListBoxItem>
+                                    </ListBox.Items>
+                                </ListBox>
+                            </Border>
+
+                            <Border BorderBrush="#3e3636" BorderThickness="0 0 0 1">
+                                <Label Style="{StaticResource XLabel}" Content="+ 新建分享" Height="50"
+                                   MouseDown="NewShare_MouseDown"/>
+                            </Border>
+                        </StackPanel>
+                    </TabItem>
+
+                    <TabItem Style="{StaticResource XTabItem_Share}" Header="视频裁剪" Margin="15 0 0 0">
+                        <StackPanel Orientation="Vertical" Margin="20 20 20 0">
+                            <Border Width="460" Height="300"
+                                Background="Gray"/>
+
+                            <local:RangeSlider Margin="0 20 0 0" />
+
+                            <Button Style="{StaticResource XButton}" Content="暂停"
+                                HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+
+            <Grid Name="Footer" Grid.Row="2" Background="#272626">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource XTextBlock}" Text="绑定第三方账号，一键分享高能战况"
                        Foreground="#969696" FontSize="14" Margin="20 0 0 0" />
-            
-            <Image Style="{StaticResource XImage_Weibo}" Grid.Column="1" />
-            <Image Style="{StaticResource XImage_QZone}" Grid.Column="3" />
+                <ToggleButton Style="{StaticResource XWeiboToggleButton}" Grid.Column="1">
+                </ToggleButton>
+                <ToggleButton Style="{StaticResource XQZoneToggleButton}" Grid.Column="3" />
+                <!--
+                <Image Style="{StaticResource XImage_Weibo}" Grid.Column="1" />
+                <Image Style="{StaticResource XImage_QZone}" Grid.Column="3" />
+                -->
+            </Grid>
+
+            <Border Name="EffectBorder" Grid.RowSpan="3" Panel.ZIndex="1" />
         </Grid>
-        
-        <Border Name="EffectBorder" Grid.RowSpan="3" Panel.ZIndex="1" />
-    </Grid>
+    </Border>
 </Window>

@@ -19,7 +19,7 @@
                               VerticalAlignment="Center" />
         </Border>
     </ControlTemplate>
-
+    
     <Style x:Key="XButton" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="50" />
         <Setter Property="Height" Value="30" />
