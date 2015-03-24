@@ -19,8 +19,11 @@
                 <ColumnDefinition Width="70" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Grid.Column="0">
-                <Image Source="/XControl;component/Images/Header_DefaultImage.png"
-                        Height="45" Width="45" />
+                <Border CornerRadius="25" Height="45" Width="45">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/XControl;component/Images/Header_DefaultImage.png" />
+                    </Border.Background>
+                </Border>
                 <TextBlock Style="{StaticResource XUserTextBlock}" Text="登陆/注册" />
             </StackPanel>
             <Grid Grid.Column="1">

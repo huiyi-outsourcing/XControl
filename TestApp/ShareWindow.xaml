@@ -193,8 +193,10 @@
                         <Border Width="460" Height="300"
                                 Background="Gray"/>
                         
+                        <local:RangeSlider Margin="0 20 0 0" />
+                        
                         <Button Style="{StaticResource XButton}" Content="暂停"
-                                HorizontalAlignment="Left" Margin="0 20 0 0"/>
+                                HorizontalAlignment="Left"/>
                     </StackPanel>
                 </TabItem>
             </TabControl>
