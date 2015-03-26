@@ -91,6 +91,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Style\XScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Style\XToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +174,16 @@
   <ItemGroup>
     <Resource Include="Images\BorderThumb_Unfocused1.png" />
     <Resource Include="Images\BorderThumb_Focused1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScrollBar_Up_Unfocused.png" />
+    <Resource Include="Images\ScrollBar_Up_Focused.png" />
+    <Resource Include="Images\ScrollBar_Down_Unfocused.png" />
+    <Resource Include="Images\ScrollBar_Down_Focused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScrollBar_Thumb_Focused.png" />
+    <Resource Include="Images\ScrollBar_Thumb_Unfocused.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

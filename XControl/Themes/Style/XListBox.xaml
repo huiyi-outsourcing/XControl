@@ -4,7 +4,8 @@
     <ControlTemplate x:Key="XListBoxTemplate" TargetType="{x:Type ListBox}">
         <Border Name="Border"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}">
+                Background="{TemplateBinding Background}"
+                Width="{TemplateBinding Width}">
             <ScrollViewer Margin="0" Focusable="False">
                 <StackPanel Margin="2" IsItemsHost="True" />
             </ScrollViewer>

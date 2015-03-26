@@ -8,7 +8,8 @@
                 <RowDefinition Height="450" />
             </Grid.RowDefinitions>
             
-            <Border BorderThickness="0 0 0 1" BorderBrush="#5b5353">
+            <Border Background="#272626" />
+            <Border BorderThickness="0 0 0 1" BorderBrush="#5b5353" Grid.Row="0">
                 <StackPanel x:Name="HeaderPanel" Margin="0" IsItemsHost="True" 
                             Orientation="Horizontal" HorizontalAlignment="Center">
                 </StackPanel>

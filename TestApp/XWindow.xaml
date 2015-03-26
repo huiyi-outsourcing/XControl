@@ -98,6 +98,11 @@
                                 <ComboBoxItem>DOTA2</ComboBoxItem>
                                 <ComboBoxItem>星际争霸</ComboBoxItem>
                                 <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                                <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                                <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                                <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                                <ComboBoxItem>暗黑破坏神</ComboBoxItem>
+                                <ComboBoxItem>暗黑破坏神</ComboBoxItem>
                             </ComboBox>
 
                             <TextBlock Text="录制时长" Style="{StaticResource XTextBlock}" />
@@ -121,7 +126,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Style="{StaticResource XTabItem}" Header="高能列表">
-                        <ListBox Style="{StaticResource XListBox}" Width="400">
+                        <ListBox Style="{StaticResource XListBox}" Width="395">
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem">
                                     <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -167,6 +172,8 @@
                             </ListBox.ItemContainerStyle>
                             <ListBox.Items>
                                 <ListBoxItem>123</ListBoxItem>
+                                <ListBoxItem>234</ListBoxItem>
+                                <ListBoxItem>234</ListBoxItem>
                                 <ListBoxItem>234</ListBoxItem>
                             </ListBox.Items>
                         </ListBox>

@@ -17,5 +17,6 @@
         <ResourceDictionary Source="/XControl;component/Themes/Style/XCheckBox.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XProgressBar.xaml" />
         <ResourceDictionary Source="/XControl;component/Themes/Style/XRangeSlider.xaml" />
+        <ResourceDictionary Source="/XControl;component/Themes/Style/XScrollBar.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
