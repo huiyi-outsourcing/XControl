@@ -7,7 +7,7 @@
         AllowsTransparency="True"
         MouseLeftButtonDown="DragWindow"
         WindowStartupLocation="Manual"
-        Height="660" Width="520">
+        Height="666" Width="520">
     <Border x:Name="OuterGlow" Margin="10" Background="#242121"
             BorderThickness="3">
         <Border.Effect>
@@ -30,11 +30,11 @@
             </Grid>
 
             <Grid Name="Body" Grid.RowSpan="2">
-                <TabControl Style="{StaticResource XTabControl_Share}">
+                <TabControl Style="{StaticResource XTabControl_Share}" SelectionChanged="TabControl_SelectionChanged">
                     <TabItem Style="{StaticResource XTabItem_Share}" Header="高能分享" Margin="0 0 15 0">
                         <StackPanel Orientation="Vertical">
                             <Border Name="NewShareControl" BorderBrush="#3e3636" BorderThickness="0 0 0 1"
-                                Visibility="Collapsed">
+                                Visibility="Visible">
                                 <StackPanel Margin="20 0 20 0">
                                     <TextBlock Style="{StaticResource XTextBlock}" Text="分享队列"
                                                HorizontalAlignment="Center" Margin="0 20 0 20" FontSize="14" />
@@ -58,12 +58,12 @@
                                         <Button Style="{StaticResource XButton}" Content="更换" Margin="10 0 0 0" />
                                     </StackPanel>
 
-                                    <TextBox Style="{StaticResource XTextBox}" Width="460"
+                                    <TextBox Style="{StaticResource XTextBox}" Width="454"
                                                      Name="VideoTitleInput" Margin="0 20 0 0">
                                         <TextBox.Resources>
                                             <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
                                                 <VisualBrush.Visual>
-                                                    <Border Background="#150a0a" Width="460">
+                                                    <Border Background="#150a0a" Width="454">
                                                         <Label Foreground="#969696" Content="输入视频标题" />
                                                     </Border>
                                                 </VisualBrush.Visual>
@@ -71,12 +71,12 @@
                                         </TextBox.Resources>
                                     </TextBox>
 
-                                    <TextBox Style="{StaticResource XTextBox}" Width="460" Height="70"
-                                                     Name="VideoDescriptionInput" Margin="0 20 0 0">
+                                    <TextBox Style="{StaticResource XTextBox}" Width="454" Height="70"
+                                             Name="VideoDescriptionInput" Margin="0 20 0 0" TextWrapping="Wrap">
                                         <TextBox.Resources>
                                             <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
                                                 <VisualBrush.Visual>
-                                                    <Border Background="#150a0a" Width="460" Height="70">
+                                                    <Border Background="#150a0a" Width="454" Height="70">
                                                         <Label Foreground="#969696" Content="输入视频简介" />
                                                     </Border>
                                                 </VisualBrush.Visual>
@@ -84,12 +84,12 @@
                                         </TextBox.Resources>
                                     </TextBox>
 
-                                    <TextBox Style="{StaticResource XTextBox}" Width="460"
+                                    <TextBox Style="{StaticResource XTextBox}" Width="454"
                                                      Name="VideoSearchInput" Margin="0 20 0 0">
                                         <TextBox.Resources>
                                             <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
                                                 <VisualBrush.Visual>
-                                                    <Border Background="#150a0a" Width="460">
+                                                    <Border Background="#150a0a" Width="454">
                                                         <Label Foreground="#969696" Content="添加搜索标签（用空格分开）" />
                                                     </Border>
                                                 </VisualBrush.Visual>
@@ -214,7 +214,11 @@
                 </TabControl>
             </Grid>
 
-            <Grid Name="Footer" Grid.Row="2" Background="#272626">
+            <Grid Name="ClipFooter" Grid.Row="2" Background="#272626" Visibility="Collapsed">
+                <Button Style="{StaticResource XClipButton}" />
+            </Grid>
+            
+            <Grid Name="ShareFooter" Grid.Row="2" Background="#272626">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="30" />

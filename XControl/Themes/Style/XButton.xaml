@@ -86,4 +86,55 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <ControlTemplate x:Key="ClipButtonTemplate" TargetType="{x:Type Button}">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="4">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+        </Border>
+        <ControlTemplate.Triggers>
+            
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/XControl;component/Images/RecordButton_Checked.png" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+            
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/XControl;component/Images/RecordButton_MouseOver.png" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+            
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="XClipButton" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Background" Value="#6a4d4d" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="#ffffff" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Content" Value="裁剪" />
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Template" Value="{StaticResource ClipButtonTemplate}" />
+    </Style>
 </ResourceDictionary>

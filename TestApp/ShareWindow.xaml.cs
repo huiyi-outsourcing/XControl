@@ -52,5 +52,21 @@ namespace TestApp
         {
             ShareList.Items.RemoveAt(ShareList.SelectedIndex);
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabControl tab = sender as TabControl;
+            
+            if (tab.SelectedIndex == 0) // share tab item selected
+            {
+                ClipFooter.Visibility = Visibility.Collapsed;
+                ShareFooter.Visibility = Visibility.Visible;
+            }
+            else // clip item selected
+            {
+                ClipFooter.Visibility = Visibility.Visible;
+                ShareFooter.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }
