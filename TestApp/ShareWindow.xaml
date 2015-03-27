@@ -41,19 +41,19 @@
 
                                     <StackPanel Orientation="Horizontal">
                                         <Grid>
-                                            <TextBox Style="{StaticResource XTextBox}" Width="400"
+                                            <TextBox Style="{StaticResource XTextBox}" Width="394"
                                                          Name="VideoSelection">
                                                 <TextBox.Resources>
                                                     <VisualBrush x:Key="CueBanner" TileMode="None" Stretch="None" AlignmentX="Left">
                                                         <VisualBrush.Visual>
-                                                            <Border Background="#150a0a" Width="400">
+                                                            <Border Background="#150a0a" Width="394">
                                                                 <Label Foreground="#969696" Content="选择视频" />
                                                             </Border>
                                                         </VisualBrush.Visual>
                                                     </VisualBrush>
                                                 </TextBox.Resources>
                                             </TextBox>
-                                            <ProgressBar Style="{StaticResource XProgressBar}" Width="400" Value="50" Opacity=".5" Background="#150a0a" />
+                                            <ProgressBar Style="{StaticResource XProgressBar}" Width="394" Value="50" Opacity=".5" Background="#150a0a" />
                                         </Grid>
                                         <Button Style="{StaticResource XButton}" Content="更换" Margin="10 0 0 0" />
                                     </StackPanel>
