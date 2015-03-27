@@ -34,7 +34,7 @@
                     <TabItem Style="{StaticResource XTabItem_Share}" Header="高能分享" Margin="0 0 15 0">
                         <StackPanel Orientation="Vertical">
                             <Border Name="NewShareControl" BorderBrush="#3e3636" BorderThickness="0 0 0 1"
-                                Visibility="Visible">
+                                Visibility="Collapsed">
                                 <StackPanel Margin="20 0 20 0">
                                     <TextBlock Style="{StaticResource XTextBlock}" Text="分享队列"
                                                HorizontalAlignment="Center" Margin="0 20 0 20" FontSize="14" />
