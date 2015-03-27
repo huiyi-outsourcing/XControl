@@ -35,7 +35,7 @@
                                       Name = "UserMenuButton"
                                       Content="张馨月小妹妹"/>
                             <Popup IsOpen="{Binding IsChecked, ElementName=UserMenuButton}"
-                                   AllowsTransparency="True">
+                                   AllowsTransparency="True" StaysOpen="False">
                                 <Border Style="{StaticResource XDropdownMenu_Border}">
                                     <Grid>
                                         <Grid.RowDefinitions>
@@ -126,7 +126,7 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Style="{StaticResource XTabItem}" Header="高能列表">
-                        <ListBox Style="{StaticResource XListBox}" Width="395">
+                        <ListBox Style="{StaticResource XListBox}" Width="395" Name="ShareList">
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem">
                                     <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -163,6 +163,7 @@
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
                                                         <Setter TargetName="Border" Property="Background" Value="#221f1f" />
+                                                        <Setter Property="IsSelected" Value="True" />
                                                     </Trigger>
                                                 </ControlTemplate.Triggers>
                                             </ControlTemplate>
@@ -172,9 +173,9 @@
                             </ListBox.ItemContainerStyle>
                             <ListBox.Items>
                                 <ListBoxItem>123</ListBoxItem>
-                                <ListBoxItem>234</ListBoxItem>
-                                <ListBoxItem>234</ListBoxItem>
-                                <ListBoxItem>234</ListBoxItem>
+                                <ListBoxItem>2345</ListBoxItem>
+                                <ListBoxItem>2346</ListBoxItem>
+                                <ListBoxItem>2347</ListBoxItem>
                             </ListBox.Items>
                         </ListBox>
                     </TabItem>

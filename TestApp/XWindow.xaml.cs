@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -36,9 +37,9 @@ namespace TestApp
             double screenY = SystemParameters.WorkArea.Height;
 
             ShareWindow share = new ShareWindow();
-            if (this.Left + 410 > screenX)
+            if (this.Left + 910 > screenX)
             {
-                share.Left = this.Left - 610;
+                share.Left = this.Left - 510;
             }
             else
             {
@@ -80,6 +81,8 @@ namespace TestApp
         { }
 
         private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
-        { }
+        {
+            ShareList.Items.RemoveAt(ShareList.SelectedIndex);
+        }
     }
 }

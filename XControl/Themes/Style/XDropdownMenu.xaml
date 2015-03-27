@@ -33,5 +33,6 @@
                 <ImageBrush ImageSource="/XControl;component/Images/Popup_Background.png" />
             </Setter.Value>
         </Setter>
+        
     </Style>
 </ResourceDictionary>

@@ -45,10 +45,12 @@ namespace TestApp
 
         private void Detail_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            
         }
 
         private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            ShareList.Items.RemoveAt(ShareList.SelectedIndex);
         }
     }
 }
