@@ -201,18 +201,18 @@
                     </TabItem>
 
                     <TabItem Style="{StaticResource XTabItem_Share}" Header="视频裁剪" Margin="15 0 0 0">
-                        <StackPanel Orientation="Vertical" Margin="20 20 20 0">
-                            <Border Width="460" Height="300"
+                        <StackPanel Orientation="Vertical" Margin="12 20 0 0" HorizontalAlignment="Center">
+                            <Border Width="470" Height="300"
                                 Background="Gray"/>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
-                                <TextBlock Name="StartTextBlock" Text="34" />
+                                <TextBlock Name="StartTextBlock" Text="{Binding ElementName=rangeSlider, Path=Start}" />
                                 <TextBlock Text="/" />
-                                <TextBlock Name="EndTextBlock" Text="100" />
+                                <TextBlock Name="EndTextBlock" Text="{Binding ElementName=rangeSlider, Path=End}" />
                                 <TextBlock Text="S" />
                             </StackPanel>
                             
-                            <local:RangeSlider Margin="0 20 0 0" />
+                            <local:RangeSlider Margin="0 20 0 0" Name="rangeSlider" HorizontalAlignment="Left" />
 
                             <Button Style="{StaticResource XButton}" Content="暂停"
                                 HorizontalAlignment="Left"/>
