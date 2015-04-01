@@ -27,8 +27,8 @@ namespace TestApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             rangeSlider.Value += 10;
-            rangeSlider.Start += 2;
-            rangeSlider.End += 4;
+            //rangeSlider.Start += 10;
+            rangeSlider.End += 20;
         }
     }
 }

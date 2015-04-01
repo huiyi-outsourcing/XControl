@@ -5,12 +5,14 @@
         Title="TestWindow" Height="300" Width="510">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Controls:RangeSlider Name="rangeSlider" />
+            <Controls:RangeSlider Name="rangeSlider" Max="100" Min="0" />
         
             <StackPanel Margin="0 0 0 0" Orientation="Horizontal">
                 <TextBlock Name="tb_value" Text="{Binding ElementName=rangeSlider, Path=Value}" Margin="20" />
                 <TextBlock Name="tb_start" Height="30" Text="{Binding ElementName=rangeSlider, Path=Start}" Margin="20" />
                 <TextBlock Name="tb_end" Height="30" Text="{Binding ElementName=rangeSlider, Path=End}" Margin="20" />
+                <TextBox Name="tb_bb" Height="30" Width="200" Text="{Binding ElementName=rangeSlider, Path=Value, Mode=TwoWay}" />
+                <Button Content="更改" Click="Button_Click" />
             </StackPanel>
         </StackPanel>
     </Grid>
